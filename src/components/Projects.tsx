@@ -5,6 +5,15 @@ import { Database, Server, Shield } from "lucide-react";
 
 const projects = [
   {
+    title: "Can You Run It",
+    date: "2024 - Present",
+    description: "A hardware-aware gaming web app that detects PC specs and checks game compatibility, helping users estimate performance.",
+    architecture: "React + Vite frontend with Express backend, external game data integration (IGDB), and custom compatibility scoring.",
+    security: "Implemented secure hardware-sync agent and privacy-first spec detection logic.",
+    tech: ["React", "Vite", "Express", "IGDB API", "Node.js", "Framer Motion"],
+    icon: <Server className="text-blue-500" size={20} />
+  },
+  {
     title: "Task Management API with WebSockets",
     date: "01/2025",
     description: "A robust real-time API for task management featuring role-based access control and live updates.",

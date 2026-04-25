@@ -5,12 +5,20 @@ import { Briefcase, Award, X, Maximize2 } from "lucide-react";
 import { useState } from "react";
 
 const experiences = [
-    {
+  {
+    title: "Can You Run It",
+    company: "Personal Project",
+    date: "2024 - Present",
+    description: "Developed a hardware-aware gaming web app that detects PC specs and checks game compatibility. Built a real-world system combining React + Vite frontend, Express backend, and IGDB API integration. Implemented custom compatibility scoring logic and AI guidance to help users estimate performance before installation. (https://can-you-run-it.vercel.app)",
+    tech: "React, Vite, Express, IGDB API, Node.js, Framer Motion, i18n"
+  },
+  {
     title: "AWS Trainer",
     company: "TEK-UP",
     date: "03/2025 - Present",
     description: "Preparing and accompanying national and international students for AWS certifications, with personalized support and tracking."
-  },  {
+  },
+  {
     title: "Design and Deployment of a Highly Available Kubernetes-Based Infrastructure for Apache Guacamole",
     company: "PlaySoft",
     date: "2024 - Present",
