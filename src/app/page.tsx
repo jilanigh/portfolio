@@ -6,15 +6,26 @@ import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
 
+const SectionDivider = () => (
+  <div className="flex justify-center py-4">
+    <div className="w-1 h-1 rounded-full bg-gray-300 dark:bg-white/10"></div>
+  </div>
+);
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-blue-500/30 selection:text-blue-900 dark:selection:text-blue-200">
       <Navbar />
       <Hero />
+      <SectionDivider />
       <About />
+      <SectionDivider />
       <Skills />
+      <SectionDivider />
       <Projects />
+      <SectionDivider />
       <Experience />
+      <SectionDivider />
       <Contact />
 
       <footer className="py-6 border-t border-gray-200 dark:border-white/10 text-center text-gray-500 text-sm">

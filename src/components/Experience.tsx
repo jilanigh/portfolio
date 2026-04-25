@@ -14,7 +14,7 @@ const experiences = [
     title: "Design and Deployment of a Highly Available Kubernetes-Based Infrastructure for Apache Guacamole",
     company: "PlaySoft",
     date: "2024 - Present",
-    description: "Designed and deployed a Kubernetes-hosted Apache Guacamole platform in a private subnet, integrating PostgreSQL persistence and secure external access through a bastion host. Automated the entire infrastructure provisioning and configuration using Terraform and Ansible across Hetzner Cloud and Proxmox. Implemented centralized multi-protocol remote access for Linux and Windows over VNC, SSH, and RDP.",
+    description: "Designed and deployed a Kubernetes-hosted Apache Guacamole platform in a private subnet, integrating PostgreSQL persistence and secure external access through a bastion host and reverse proxy. Automated the entire infrastructure provisioning and configuration using Terraform and Ansible across Hetzner Cloud and Proxmox. Implemented centralized multi-protocol remote access for Linux and Windows over VNC, SSH, and RDP.",
     tech: "Kubernetes, Terraform, Ansible, Apache Guacamole, PostgreSQL, Hetzner Cloud, Proxmox, RDP/SSH/VNC"
   },
   {
@@ -107,11 +107,21 @@ export default function Experience() {
                   
                   <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] shadow-sm dark:shadow-none backdrop-blur-sm group-hover:border-blue-400 dark:group-hover:border-blue-500/30 transition-colors">
                     <div className="flex flex-col mb-2">
-                      <span className="text-blue-600 dark:text-blue-400 text-sm font-mono font-medium">{exp.date}</span>
                       <h3 className="font-bold text-foreground text-lg">{exp.title}</h3>
-                      <span className="text-gray-600 dark:text-gray-400 text-sm">{exp.company}</span>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-blue-600 dark:text-blue-400 text-xs font-mono font-medium uppercase tracking-wider">{exp.date}</span>
+                        <div className="w-1 h-1 rounded-full bg-gray-300 dark:bg-white/20"></div>
+                        <span className="text-gray-600 dark:text-gray-400 text-sm font-medium">{exp.company}</span>
+                      </div>
                     </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{exp.description}</p>
+                    <div className="space-y-2">
+                      {exp.description.split('. ').map((point, i) => (
+                        <div key={i} className="flex gap-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                          <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-500 shrink-0 opacity-60"></span>
+                          <span>{point.endsWith('.') ? point : `${point}.`}</span>
+                        </div>
+                      ))}
+                    </div>
                     
                     {exp.title === "Multi-Cloud Image Creation Automation Pipeline" && (
                       <div className="mt-4 mb-4">
