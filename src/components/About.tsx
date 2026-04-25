@@ -16,8 +16,8 @@ export default function About() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
+  } as const;
 
   return (
     <section id="about" className="py-20 border-t border-gray-200 dark:border-white/5 bg-gray-50 dark:bg-white/[0.02]">

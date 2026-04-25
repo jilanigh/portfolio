@@ -48,7 +48,7 @@ export default function Hero() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" as const }}
             className="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight text-foreground"
           >
             Hi, I'm <br />
@@ -58,7 +58,7 @@ export default function Hero() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" as const }}
             className="text-lg text-gray-600 dark:text-gray-400 max-w-lg mb-10 leading-relaxed font-medium"
           >
             I specialize in securing, automating, and scaling cloud infrastructure. Building robust pipelines and reliable backend architectures for modern applications.
