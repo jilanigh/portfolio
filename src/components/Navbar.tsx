@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -8,6 +8,12 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => setMounted(true), []);
 
@@ -43,6 +49,11 @@ export default function Navbar() {
           )}
         </div>
       </div>
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="h-[3px] bg-blue-500 origin-[0%]"
+        style={{ scaleX }}
+      />
     </motion.nav>
   );
 }
