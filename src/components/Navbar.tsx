@@ -20,7 +20,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <a href="#" className="font-bold text-2xl tracking-tighter">
-          GJ<span className="text-blue-500">.</span>
+          GHarbi Jilani<span className="text-blue-500">.</span>
         </a>
 
         <div className="flex items-center gap-8">
