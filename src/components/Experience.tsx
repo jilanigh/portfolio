@@ -6,6 +6,13 @@ import { useState } from "react";
 
 const experiences = [
   {
+    title: "Design and Deployment of a Highly Available Kubernetes-Based Infrastructure for Apache Guacamole",
+    company: "Cloud Infrastructure Project",
+    date: "2024 - 2025",
+    description: "Designed and deployed a Kubernetes-hosted Apache Guacamole platform in a private subnet, integrating PostgreSQL persistence and secure external access through a bastion host. Automated the entire infrastructure provisioning and configuration using Terraform and Ansible across Hetzner Cloud and Proxmox. Implemented centralized multi-protocol remote access for Linux and Windows over VNC, SSH, and RDP.",
+    tech: "Kubernetes, Terraform, Ansible, Apache Guacamole, PostgreSQL, Hetzner Cloud, Proxmox, RDP/SSH/VNC"
+  },
+  {
     title: "AWS Trainer",
     company: "TEK-UP",
     date: "03/2025 - Present",
