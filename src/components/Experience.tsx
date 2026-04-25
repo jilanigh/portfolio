@@ -6,6 +6,14 @@ import { useState } from "react";
 
 const experiences = [
   {
+    title: "Can You Run It",
+    company: "Personal Project",
+    date: "2024 - Present",
+    status: "Demo Version",
+    description: "Developed a hardware-aware gaming web app that detects PC specs and checks game compatibility. Built a real-world system combining React + Vite frontend, Express backend, and IGDB API integration. Implemented custom compatibility scoring logic and AI guidance. (https://can-you-run-it.vercel.app)",
+    tech: "React, Vite, Express, IGDB API, Node.js, Framer Motion, i18n"
+  },
+  {
     title: "AWS Trainer",
     company: "TEK-UP",
     date: "03/2025 - Present",
@@ -14,13 +22,14 @@ const experiences = [
   {
     title: "Design and Deployment of a Highly Available Kubernetes-Based Infrastructure for Apache Guacamole",
     company: "PlaySoft",
-    date: "2024 - Present",
+    date: "2024 - Expected Aug 2025",
+    status: "In Progress",
     description: "Designed and deployed a Kubernetes-hosted Apache Guacamole platform in a private subnet, integrating PostgreSQL persistence and secure external access through a bastion host and reverse proxy. Automated the entire infrastructure provisioning and configuration using Terraform and Ansible across Hetzner Cloud and Proxmox. Implemented centralized multi-protocol remote access for Linux and Windows over VNC, SSH, and RDP.",
     tech: "Kubernetes, Terraform, Ansible, Apache Guacamole, PostgreSQL, Hetzner Cloud, Proxmox, RDP/SSH/VNC"
   },
   {
     title: "Multi-Cloud Image Creation Automation Pipeline",
-    company: "PlaySaft",
+    company: "PlaySoft",
     date: "06/2025 - 08/2025",
     description: "Designed a CI/CD pipeline to automate the creation of AWS AMIs and Hetzner snapshots. Provisioned images/snapshots, integrated Slack notifications, and securely managed secrets via Vault-server. Applied DevOps best practices, including Infrastructure as Code (IaC) and versioned builds.",
     tech: "Packer, Ansible, GitLab CI/CD, Docker, AWS, Hetzner, Bash, Vault"
@@ -109,10 +118,18 @@ export default function Experience() {
                   <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] shadow-sm dark:shadow-none backdrop-blur-sm group-hover:border-blue-400 dark:group-hover:border-blue-500/30 transition-colors">
                     <div className="flex flex-col mb-2">
                       <h3 className="font-bold text-foreground text-lg">{exp.title}</h3>
-                      <div className="flex items-center gap-2 mt-1">
+                      <div className="flex items-center flex-wrap gap-2 mt-1">
                         <span className="text-blue-600 dark:text-blue-400 text-xs font-mono font-medium uppercase tracking-wider">{exp.date}</span>
                         <div className="w-1 h-1 rounded-full bg-gray-300 dark:bg-white/20"></div>
                         <span className="text-gray-600 dark:text-gray-400 text-sm font-medium">{exp.company}</span>
+                        {exp.status && (
+                          <>
+                            <div className="w-1 h-1 rounded-full bg-gray-300 dark:bg-white/20"></div>
+                            <span className="px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-500/10 text-amber-600 dark:text-amber-500 text-[10px] font-bold uppercase tracking-wider border border-amber-200 dark:border-amber-500/20">
+                              {exp.status}
+                            </span>
+                          </>
+                        )}
                       </div>
                     </div>
                     <div className="space-y-2">

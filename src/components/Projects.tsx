@@ -7,6 +7,7 @@ const projects = [
   {
     title: "Can You Run It",
     date: "2024 - Present",
+    status: "Demo Version",
     description: "A hardware-aware gaming web app that detects PC specs and checks game compatibility, helping users estimate performance.",
     architecture: "React + Vite frontend with Express backend, external game data integration (IGDB), and custom compatibility scoring.",
     security: "Implemented secure hardware-sync agent and privacy-first spec detection logic.",
@@ -30,6 +31,16 @@ const projects = [
     security: "Secured REST APIs utilizing Spring Security for robust authentication and role management.",
     tech: ["Java", "Spring Boot", "MySQL", "Spring Security"],
     icon: <Database className="text-emerald-500" size={20} />
+  },
+  {
+    title: "HA Guacamole Infrastructure",
+    date: "2024 - Aug 2025",
+    status: "In Progress",
+    description: "Deployment of a highly available Kubernetes-hosted Apache Guacamole platform with secure external access.",
+    architecture: "K8s, PostgreSQL, Bastion Host, Reverse Proxy, Terraform, Ansible.",
+    security: "Private subnet isolation, automated DB initialization, and secure multi-protocol access.",
+    tech: ["Kubernetes", "Terraform", "Ansible", "PostgreSQL", "Linux"],
+    icon: <Shield className="text-purple-500" size={20} />
   },
   {
     title: "Carpooling Web App - Waselni",
@@ -85,7 +96,14 @@ export default function Projects() {
                   <div className="p-2 bg-gray-50 dark:bg-white/5 rounded-lg border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-none">
                     {project.icon}
                   </div>
-                  <span className="text-xs text-gray-500 dark:text-gray-500 font-mono">{project.date}</span>
+                  <div className="flex flex-col items-end gap-1">
+                    <span className="text-xs text-gray-500 dark:text-gray-500 font-mono">{project.date}</span>
+                    {project.status && (
+                      <span className="px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-500/10 text-amber-600 dark:text-amber-500 text-[9px] font-bold uppercase tracking-wider border border-amber-200 dark:border-amber-500/20">
+                        {project.status}
+                      </span>
+                    )}
+                  </div>
                 </div>
                 
                 <h3 className="text-xl font-bold text-foreground mb-2 transition-colors group-hover:text-blue-500">
