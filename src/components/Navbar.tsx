@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -8,17 +8,11 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
 
   useEffect(() => setMounted(true), []);
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -28,7 +22,7 @@ export default function Navbar() {
         <a href="#" className="font-bold text-2xl tracking-tighter">
           GJ<span className="text-blue-500">.</span>
         </a>
-        
+
         <div className="flex items-center gap-8">
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wider">
             <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
@@ -37,7 +31,7 @@ export default function Navbar() {
             <a href="#experience" className="hover:text-blue-500 transition-colors">Experience</a>
             <a href="#contact" className="hover:text-blue-500 transition-colors">Contact</a>
           </div>
-          
+
           {mounted && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -49,11 +43,6 @@ export default function Navbar() {
           )}
         </div>
       </div>
-      {/* Scroll Progress Bar */}
-      <motion.div
-        className="h-[3px] bg-blue-500 origin-[0%]"
-        style={{ scaleX }}
-      />
     </motion.nav>
   );
 }
