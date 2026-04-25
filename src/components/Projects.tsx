@@ -33,16 +33,6 @@ const projects = [
     icon: <Database className="text-emerald-500" size={20} />
   },
   {
-    title: "HA Guacamole Infrastructure",
-    date: "2024 - Aug 2025",
-    status: "In Progress",
-    description: "Deployment of a highly available Kubernetes-hosted Apache Guacamole platform with secure external access.",
-    architecture: "K8s, PostgreSQL, Bastion Host, Reverse Proxy, Terraform, Ansible.",
-    security: "Private subnet isolation, automated DB initialization, and secure multi-protocol access.",
-    tech: ["Kubernetes", "Terraform", "Ansible", "PostgreSQL", "Linux"],
-    icon: <Shield className="text-purple-500" size={20} />
-  },
-  {
     title: "Carpooling Web App - Waselni",
     date: "03/2024 - 04/2024",
     description: "Interactive carpooling platform connecting drivers and passengers with integrated map routing.",
